@@ -79,7 +79,8 @@ rosservice call /save_scan_context
 ---
 ## 在建图的基础上，实现全局初始化的要求
 ---
-保存的.pcd文件处于lidar_localization/slam_data中,不同时间点的初始化
+保存的.pcd文件处于lidar_localization/slam_data中,保存的filtered_map.pcd不是完整地图。
+matching采用scancontext，不同时间点的初始化:
 ```bash
 rosbag play -r 0.2 kitti_lidar_only_2011_10_03_drive_0027_synced.bag -s 100 #第100s
 ```
@@ -91,3 +92,6 @@ rosbag play -r 0.2 kitti_lidar_only_2011_10_03_drive_0027_synced.bag -s 100 #第
 <img src="result/300s.png" alt="Mapping and Map-Based Localization" width="100%">
 400S时初始化
 <img src="result/400s.png" alt="Mapping and Map-Based Localization" width="100%">
+
+* 采用SetGNSSPose方式，除开原点，其他时间点是matching错误的
+<img src="result/100s(2).png" alt="Mapping and Map-Based Localization" width="100%">
