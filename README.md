@@ -74,17 +74,20 @@ rosservice call /save_scan_context
 ## 在建图的基础上，加载点云地图，实现在地图原点的初始化
 ---
 
+<img src="/result/原点.png" alt="Mapping and Map-Based Localization" width="100%">
+
+---
+## 在建图的基础上，实现全局初始化的要求
+---
+保存的.pcd文件处于lidar_localization/slam_data中,不同时间点的初始化
 ```bash
-# set up session:
-source install/setup.bash
-# launch mapping:
-roslaunch lidar_localization matching.launch
+rosbag play -r 0.2 kitti_lidar_only_2011_10_03_drive_0027_synced.bag -s 100 #第100s
 ```
-
-成功后, 可以看到如下的RViz界面. **注意**: 该截图**并非完整地图**, 拷贝此图用于提交, 你将不会得到任何分数.
-
-<img src="doc/images/demo-matching.png" alt="Mapping and Map-Based Localization" width="100%">
-
-### 优秀要求: 在建图的基础上，实现全局初始化的要求
-
-全局搜索**TODO**. Good Luck!
+100S时初始化
+<img src="result/100s.png" alt="Mapping and Map-Based Localization" width="100%">
+200S时初始化
+<img src="result/200s.png" alt="Mapping and Map-Based Localization" width="100%">
+300S时初始化
+<img src="result/300s.png" alt="Mapping and Map-Based Localization" width="100%">
+400S时初始化
+<img src="result/400s.png" alt="Mapping and Map-Based Localization" width="100%">
