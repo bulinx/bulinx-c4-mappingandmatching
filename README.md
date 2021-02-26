@@ -68,11 +68,11 @@ rosservice call /save_scan_context
 ---
 ##  跑通建图流程、保存地图，并截图显示完整地图
 ---
-<img src="result/demo-partial-mapping.png" alt="Mapping and Map-Based Localization" width="100%">
+<img src="/result/Q1.png" alt="Mapping and Map-Based Localization" width="100%">
 
-### 在建图的基础上，加载点云地图，实现在地图原点的初始化
-
-**启动解决方案如下**. **注意**: 在启动前, 请确保已成功运行Q1, 并保存**Map**以及**Scan Context Data**
+---
+## 在建图的基础上，加载点云地图，实现在地图原点的初始化
+---
 
 ```bash
 # set up session:
